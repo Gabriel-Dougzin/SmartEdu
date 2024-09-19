@@ -1,0 +1,52 @@
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Cadastro de Alunos</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    </head>
+    <body>
+        <nav class="navbar navbar-light bg-info">
+  <a class="navbar-brand" th:href="@{/}">
+    <img src="https://ucarecdn.com/dd12fd66-06ba-4ee2-8735-4f1d2ef47b88/" width="30" height="30" class="d-inline-block align-top" alt="">
+    SmartEdu
+  </a>
+</nav>
+        <div class="container">
+            <h1>Cadastro</h1>
+            <hr>
+            <h4>Informe os Dados</h4>
+            <form action="#" th:action="@{/cadastrarAluno} " th:object="${aluno}" method="POST">
+               <input type="text" th:field="*{nome}" placeholder="Nome do Aluno" class="form-control mt-4 col-4">
+                <span class="text-danger" th:if="${#fields.hasErrors('nome')}" th:errors="*{nome}"></span>
+                <input type="text" th:field="*{cpf}" placeholder="CPF do Aluno" class="form-control mt-4 col-4">
+                <span class="text-danger" th:if="${#fields.hasErrors('cpf')}" th:errors="*{cpf}"></span>
+                <input type="text" th:field="*{n_matricula}" placeholder="Número de Matricula do Aluno" class="form-control mt-4 col-4">
+                <span class="text-danger" th:if="${#fields.hasErrors('n_matricula')}" th:errors="*{n_matricula}"></span>
+                <input type="text" th:field="*{idade}" placeholder="Idade do Aluno" class="form-control mt-4 col-4">
+                <span class="text-danger" th:if="${#fields.hasErrors('idade')}" th:errors="*{idade}"></span>
+                <input type="hidden" th:field="*{nota_1}">
+                <input type="hidden" th:field="*{nota_2}">
+                <input type="hidden" th:field="*{nota_3}">
+                <input type="hidden" th:field="*{aprov}">
+                <button type="submit" class="btn btn-info mt-4">Salvar</button>
+            </form>
+            <hr>
+            <a th:href="@{/}"> Voltar</a>
+        </div>
+        <footer class=" bg-info" style=" position: fixed; bottom: 0; left: 0; width: 100%; ">
+        <div class="container">
+            <p style="color: white; text-decoration: none;">
+                Siga nós nas redes sociais.
+            </p>
+            <p>
+            <h5 style="color: white;">Tik-Tok <a style="color: purple; text-decoration: none;" th:href="@{/}">@SmartEdu</a>
+             YouTube <a style="color: purple; text-decoration: none;" th:href="@{/}">@SmartEdu</a>
+             Facebook <a style="color: purple; text-decoration: none;" th:href="@{/}">@SmartEdu</a>
+             Instagran <a style="color: purple; text-decoration: none;"th:href="@{/}">@SmartEdu</a></h5>
+            </p>
+        </div>
+    </footer>
+    </body>
+</html>
+
+
