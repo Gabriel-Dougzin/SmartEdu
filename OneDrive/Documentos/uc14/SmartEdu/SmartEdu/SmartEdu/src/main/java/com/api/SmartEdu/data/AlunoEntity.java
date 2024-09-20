@@ -34,7 +34,7 @@ public class AlunoEntity {
     
     @Pattern(regexp = "^[0-9]+$", message = "A string deve conter apenas números.")
     @Min(value = 0, message = "O valor mínimo é 0.")
-    @Max(value = 10, message = "O valor máximo é 100.")
+    @Max(value = 100, message = "O valor máximo é 100.")
     private String idade;
     
   
